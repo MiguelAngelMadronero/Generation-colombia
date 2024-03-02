@@ -335,8 +335,13 @@ body{
         text-align: left;
         
     }
+    .alinear-boton{
+        display: flex;
+        justify-content: left;
+    }
     .cta{
         padding: 16px 45px;
+        
     }
 
 
