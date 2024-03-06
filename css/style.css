@@ -54,11 +54,14 @@ body{
 
 }
 
-.hero__huddle{
+.hero__wlogo{
     width: 40%;
     display: block;
     margin-right: 2%;
 
+}
+.title__whatsapp{
+    color: var(--verde-claro);
 }
 .hero__whatsapp{
     font-weight: 700;
@@ -74,6 +77,7 @@ body{
     border-radius: 30px;
     font-weight: 600;
     box-shadow: 0 0 1px;
+    transition: all 0.3s ease-in-out;
 }
 
 .hero__cta:hover{
@@ -110,6 +114,13 @@ body{
     border-radius: 30px;
     margin-top: 16px;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.cta:hover{
+    background-color: var(--verde-azulado-oscuro);
 }
 
 .hero__picture{
@@ -157,14 +168,29 @@ body{
     overflow: hidden;
    
 }
+.hero__alinear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .hero__number{
     font-size: 60px;
 }
 
+
 .hero__icon{
     display: block;
 }
+
+.hero__unidad{
+    font-size: 60px;
+    color: inherit;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+
 
 .wave{
     position: absolute;
@@ -236,7 +262,7 @@ body{
 
 .footer{
     color: #fff;
-    background-color: var(--Very-Dark-Cyan);
+    background-color: var(--verde-azulado-oscuro);
 }
 
 .footer__title{
@@ -250,6 +276,28 @@ body{
     line-height: 1.5;
     margin: 16px 0 50px;
 }
+
+.footer__linkWhatsapp{
+    text-decoration: none;
+    display: flex;
+    
+    align-items: center;
+}
+
+
+
+.footer__whatsapp{
+    font-weight: 700;
+    font-size: 20px;
+    
+    color: #fff;
+
+    text-decoration: none;
+    outline: none;
+    
+}
+
+
 
 .footer__form{
     display: flex;
@@ -290,13 +338,13 @@ body{
     line-height: 50px;
 }
 .footer__contact::after{
-    content:'Phone: +1-543-123-4567';
+    content:'Phone: +57 3137613879';
     margin-left: 10px;
     
 }
 
 .footer__contact--email::after{
-    content: 'example@huddle.com';
+    content: 'mams2208@outlook.com';
    
 }
 
@@ -312,9 +360,38 @@ body{
     width: 40px;
 }
 
+
 .footer__icon{
     width: 100%; /* DEBES COLOCAR EL WIDTH AL CIEN POR CIENTO PARA PODER MODIFICARLE EL TAMAÑO EN PIXELES*/
     display: block;
+}
+
+.footer__final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.btn-whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img__whatsapp{
+    width: 70px; /* Puedes ajustar el tamaño según tus necesidades */
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #25D366;
+    background-color: var(--verde-claro);
+    color: #fff;
+    padding: 1px;
 }
 
 @media(min-width:768px){
@@ -399,11 +476,18 @@ body{
         --padding-container:110px 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     .footer__newsletter{
         width: 50%;
-        max-width: 350px;
+        max-width: 600px;
         order: 1;
+        /* display: flex;
+        justify-content: center; */
+    }
+
+    .footer__chat{
+        width: 100%;
     }
     .footer__content{
         width: 50%;
@@ -413,4 +497,20 @@ body{
     .footer__paragraph{
         margin: 16px 0 30px;
     }
+}
+
+@media(min-width:986px){
+
+    .hero__texts{
+        padding-top: 35px;
+    }
+
+    .hero__paragraph{
+        margin-top: 10%;
+    }
+    .alinear-boton{
+        margin-top: 10%;
+    }
+
+
 }

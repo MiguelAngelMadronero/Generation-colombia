@@ -25,6 +25,8 @@ addEventListener('DOMContentLoaded', ()=>{
         
     }
 
+    
+
     const mostrarContadores= elementos=>{
         elementos.forEach(elemento => {
             if (elemento.isIntersecting){
@@ -49,6 +51,52 @@ addEventListener('DOMContentLoaded', ()=>{
 
 
 })
+
+// // Función para verificar si un elemento es visible en la ventana del navegador
+// function esVisible(elemento) {
+//     var posicion = elemento.getBoundingClientRect();
+//     return (
+//         posicion.top >= 0 &&
+//         posicion.left >= 0 &&
+//         posicion.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//         posicion.right <= (window.innerWidth || document.documentElement.clientWidth)
+//     );
+// }
+
+// // Función para manejar el scroll y verificar la visibilidad del elemento
+// function manejarScroll() {
+//     var mensaje = document.querySelector('.mensaje');
+//     if (esVisible(mensaje)) {
+//         // Aplicar la animación después de 500ms
+//         setTimeout(function() {
+//             mensaje.classList.add('animar');
+//         }, 500);
+//         // Desactivar el evento de scroll una vez que se haya mostrado la animación
+//         window.removeEventListener('scroll', manejarScroll);
+//     }
+// }
+
+// // Manejar scroll
+// window.addEventListener('scroll', manejarScroll);
+// // Llamar a la función al cargar la página
+// manejarScroll();
+
+function esVisible(elemento) {
+    var rect = elemento.getBoundingClientRect();
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    return !(rect.bottom < 0 || rect.top - windowHeight >= 0);
+}
+
+document.addEventListener("scroll", function() {
+    var elementos = document.querySelectorAll(".hero__unidad");
+    elementos.forEach(function(elemento) {
+        if (esVisible(elemento)) {
+            elemento.classList.add("animar");
+            elemento.classList.remove("ocultar");
+        }
+    });
+});
+
 
 
 
